@@ -5,6 +5,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { getOne } from "../../api/productsAPI";
 import { useQuery } from "react-query";
 import { PuffLoader } from "react-spinners";
+import LinkIcon from '@mui/icons-material/Link';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 function Product() {
 
@@ -32,7 +35,10 @@ function Product() {
                     <h1 className="product__title">{data.data.name}</h1>
                     <hr className="product__line"/>
                     <p className="product__description">{data.data.description}</p>
-                    <ul className="list pl0 mt3">
+                    <p className="product__description2"><LinkIcon/><a href={data.data.website} target='_blank'>{data.data.website}</a></p>
+                    <p className="product__description2"><AlternateEmailIcon/>{data.data.email}</p>
+                    <p className="product__description2"><LocalPhoneIcon/>{data.data.phonenum}</p>
+                    <ul className="list pl0 mt3 product__cities">
                         {data.data.city.map((elem)=>{
                             return <li className='f4 lh-copy' key={elem.name}><LocationOnIcon/>{elem.name}</li>
                         })}
