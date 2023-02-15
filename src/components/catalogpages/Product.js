@@ -38,7 +38,7 @@ function Product() {
                     <p className="product__description2"><LinkIcon/><a href={data.data.website} target='_blank'>{data.data.website}</a></p>
                     <p className="product__description2"><AlternateEmailIcon/>{data.data.email}</p>
                     <p className="product__description2"><LocalPhoneIcon/>{data.data.phonenum}</p>
-                    <ul className="list pl0 mt3 product__cities">
+                    <ul className="list mt3 product__cities">
                         {data.data.city.map((elem)=>{
                             return <li className='f4 lh-copy' key={elem.name}><LocationOnIcon/>{elem.name}</li>
                         })}
